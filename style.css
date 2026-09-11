@@ -1,86 +1,144 @@
-/* Общие настройки для всей страницы */
+/* Базовые настройки страницы */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f4f6;
     color: #333;
-    line-height: 1.6;
     margin: 0;
-    padding: 20px 0;
+    padding: 40px 20px;
 }
 
-/* Контейнер, который держит резюме по центру экрана */
+/* Основной белый контейнер по центру */
 .container {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Шапка с именем */
-header {
-    text-align: center;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 20px;
+/* === ШАПКА === */
+.profile-header {
+    display: flex; /* Выстраиваем фото и текст в один ряд */
+    align-items: center; /* Центрируем по вертикали */
+    gap: 30px; /* Расстояние между фото и текстом */
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 30px;
     margin-bottom: 30px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #1f2937;
+/* Блок с фотографией */
+.photo-container {
+    flex-shrink: 0; /* Запрещаем фото сжиматься */
 }
 
-.subtitle {
-    font-size: 1.2em;
-    color: #4b5563;
-    margin-top: 5px;
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Делает фото круглым */
+    object-fit: cover; /* Обрезает фото аккуратно по центру */
+    border: 3px solid #e5e7eb;
 }
 
-.contact-info {
-    font-size: 0.9em;
-    color: #6b7280;
-}
-
-/* Настройки для заголовков секций (Опыт, Образование) */
-h2 {
-    color: #2563eb; /* Приятный синий цвет */
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 5px;
-    margin-top: 30px;
-}
-
-/* Отступы внутри элементов опыта и образования */
-.job-item, .edu-item {
-    margin-bottom: 20px;
-}
-
-.job-item h3, .edu-item h3 {
-    margin: 0 0 5px 0;
+/* Блок с текстом */
+.profile-info h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2em;
     color: #111827;
 }
 
-.company {
+.about-me {
     color: #4b5563;
-    font-size: 0.95em;
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+}
+
+/* === СОЦИАЛЬНЫЕ СЕТИ === */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Круглые кнопки */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: transform 0.2s; /* Плавная анимация при наведении */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Увеличивается при наведении */
+}
+
+/* Фирменные цвета для каждой сети */
+.telegram { background-color: #0088cc; }
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.github { background-color: #333; }
+
+/* === ОСНОВНОЙ КОНТЕНТ === */
+h2 {
+    color: #111827;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Карточка учебы */
+.card {
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6; /* Синяя полоска слева */
+    margin-bottom: 30px;
+}
+
+.card h3 {
+    margin: 0 0 5px 0;
+    color: #1f2937;
+}
+
+.specialty {
+    font-weight: bold;
+    color: #3b82f6;
     margin: 0 0 10px 0;
 }
 
-/* Красивый список навыков */
+.details {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* === НАВЫКИ === */
 .skills-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Позволяет тегам переноситься на новую строку */
     gap: 10px;
     padding: 0;
-    list-style: none;
+    list-style: none; /* Убирает стандартные точки у списка */
 }
 
 .skills-list li {
-    background-color: #eff6ff;
-    color: #1d4ed8;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.9em;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95em;
     font-weight: 500;
+}
+
+/* === АДАПТИВНОСТЬ (для мобильных телефонов) === */
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column; /* На телефоне фото будет над текстом */
+        text-align: center; /* Центрируем весь текст */
+    }
+    .social-links {
+        justify-content: center; /* Центрируем иконки соцсетей */
+    }
 }

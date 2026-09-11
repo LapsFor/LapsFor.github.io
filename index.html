@@ -4,47 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме - Денис Ткаченко</title>
-    <!-- Подключаем наш файл со стилями -->
+    <!-- Подключаем наш CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Подключаем библиотеку иконок для соцсетей -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Денис Ткаченко</h1>
-            <p class="subtitle">Студент факультета логистики</p>
-            <p class="contact-info">Польша | email@example.com | +48 000 000 000</p>
+        <!-- Шапка: Фото слева, Информация и соцсети справа -->
+        <header class="profile-header">
+            <div class="photo-container">
+                <!-- Место под твое фото -->
+                <img src="https://via.placeholder.com/150" alt="Денис Ткаченко" class="profile-photo">
+            </div>
+            <div class="profile-info">
+                <h1>Денис Ткаченко</h1>
+                <p class="about-me">
+                    Привет! Я живу и учусь в Польше. Увлекаюсь волейболом и изучением новых технологий. 
+                    Мне нравится совмещать понимание бизнес-процессов с техническими решениями, 
+                    и я всегда готов применить свои знания на практике.
+                </p>
+                <div class="social-links">
+                    <a href="https://t.me/твоя_ссылка" target="_blank" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://instagram.com/твоя_ссылка" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/твоя_ссылка" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
         </header>
 
-        <section class="experience">
-            <h2>Опыт работы</h2>
-            <div class="job-item">
-                <h3>Транспортное экспедирование</h3>
-                <p class="company"><strong>Northgate, Gliwice</strong> | Декабрь – Март</p>
-                <ul>
-                    <li>Организация и координация грузоперевозок.</li>
-                    <li>Работа с сопроводительной документацией.</li>
-                    <li>Взаимодействие с перевозчиками и клиентами.</li>
-                </ul>
-            </div>
-        </section>
-
         <section class="education">
-            <h2>Образование</h2>
-            <div class="edu-item">
-                <h3>Студент по направлению «Логистика»</h3>
-                <p>Университет в Польше | <em>(Годы обучения)</em></p>
-                <p>В поиске стажировки (120 часов) для прохождения практики.</p>
+            <h2>Место учебы</h2>
+            <div class="card">
+                <h3>Silesian University of Technology (Польша)</h3>
+                <p class="specialty">Специальность: Логистика</p>
+                <p class="details">Изучаю управление цепями поставок</p>
             </div>
         </section>
 
         <section class="skills">
             <h2>Навыки</h2>
             <ul class="skills-list">
-                <li>Управление цепями поставок (Odoo)</li>
-                <li>Моделирование бизнес-процессов (iGrafx)</li>
-                <li>Базовые знания программирования (Python, C)</li>
-                <li>Английский язык — (Укажи уровень)</li>
-                <li>Польский язык — (Укажи уровень)</li>
+                <li>Autodesk® Inventor</li>
+                <li>AutoCAD моделирование</li>
+                <li>Python</li>
+                <li>CS50 Guide 2026</li>
+                <li>Python и C</li>
+                <li>HTML</li>
+                <li>CSS</li>
             </ul>
         </section>
     </div>
