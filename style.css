@@ -1,22 +1,36 @@
 /* Базовые настройки страницы */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Убираем старый background-color и добавляем красивый градиент */
     background-color: #f3f4f6;
+    background-attachment: fixed; /* Чтобы фон стоял на месте при прокрутке */
     color: #333;
     margin: 0;
     padding: 40px 20px;
+    min-height: 100vh;
 }
 
-/* Основной белый контейнер по центру */
+/* Основной белый контейнер по центру с эффектом так званого стекла */
 .container {
     max-width: 750px;
     margin: 0 auto;
-    background-color: #fff;
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 16px; /* Сделал углы чуть более круглыми для красоты */
+    
+    /* --- ЭФФЕКТ СТЕКЛА НАЧИНАЕТСЯ ЗДЕСЬ --- */
+    /* Белый цвет с прозрачностью 60% (0.6) */
+    background: rgba(255, 255, 255, 0.6); 
+    
+    /* Эффект размытия того, что находится ЗА блоком */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); /* Для браузеров Safari на iPhone */
+    
+    /* Тонкая белая рамка, создающая блик на стекле */
+    border: 1px solid rgba(255, 255, 255, 0.7); 
+    
+    /* Мягкая объемная тень */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
-
 /* === ШАПКА === */
 .profile-header {
     display: flex; /* Выстраиваем фото и текст в один ряд */
