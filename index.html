@@ -1,17 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Резюме - Денис Ткаченко</title>
+    <!-- Подключаем наш файл со стилями -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Привіт! Це мій новий сайт</h1>
-<p>Я створив цей каркас автоматично у VS Code за допомогою Emmet.</p>
-<p>Сайт опубліковано через Git!</p>
-<p>Я використовую GitHub для зберігання свого коду та публікації сайту.</p>
-<li>GitHub - це платформа для розробників, де можна зберігати та керувати своїми проектами.</li>
-<li>GitHub дозволяє спільно працювати над проектами, відстежувати зміни та обговорювати їх.</li>        
+    <div class="container">
+        <header>
+            <h1>Денис Ткаченко</h1>
+            <p class="subtitle">Студент факультета логистики</p>
+            <p class="contact-info">Польша | email@example.com | +48 000 000 000</p>
+        </header>
 
+        <section class="experience">
+            <h2>Опыт работы</h2>
+            <div class="job-item">
+                <h3>Транспортное экспедирование</h3>
+                <p class="company"><strong>Northgate, Gliwice</strong> | Декабрь – Март</p>
+                <ul>
+                    <li>Организация и координация грузоперевозок.</li>
+                    <li>Работа с сопроводительной документацией.</li>
+                    <li>Взаимодействие с перевозчиками и клиентами.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Образование</h2>
+            <div class="edu-item">
+                <h3>Студент по направлению «Логистика»</h3>
+                <p>Университет в Польше | <em>(Годы обучения)</em></p>
+                <p>В поиске стажировки (120 часов) для прохождения практики.</p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Навыки</h2>
+            <ul class="skills-list">
+                <li>Управление цепями поставок (Odoo)</li>
+                <li>Моделирование бизнес-процессов (iGrafx)</li>
+                <li>Базовые знания программирования (Python, C)</li>
+                <li>Английский язык — (Укажи уровень)</li>
+                <li>Польский язык — (Укажи уровень)</li>
+            </ul>
+        </section>
+    </div>
 </body>
 </html>

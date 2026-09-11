@@ -1,0 +1,86 @@
+/* Общие настройки для всей страницы */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* Контейнер, который держит резюме по центру экрана */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Шапка с именем */
+header {
+    text-align: center;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #1f2937;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #4b5563;
+    margin-top: 5px;
+}
+
+.contact-info {
+    font-size: 0.9em;
+    color: #6b7280;
+}
+
+/* Настройки для заголовков секций (Опыт, Образование) */
+h2 {
+    color: #2563eb; /* Приятный синий цвет */
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Отступы внутри элементов опыта и образования */
+.job-item, .edu-item {
+    margin-bottom: 20px;
+}
+
+.job-item h3, .edu-item h3 {
+    margin: 0 0 5px 0;
+    color: #111827;
+}
+
+.company {
+    color: #4b5563;
+    font-size: 0.95em;
+    margin: 0 0 10px 0;
+}
+
+/* Красивый список навыков */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.skills-list li {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
