@@ -180,3 +180,34 @@ h2 {
     font-size: 0.95em;
     font-weight: 500;
 }
+
+/* === НАВИГАЦИЯ === */
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px; /* Отступ сверху от соцсетей */
+    flex-wrap: wrap; /* Чтобы на телефоне кнопки не вылезали за экран */
+}
+
+.page-nav a {
+    text-decoration: none; /* Убираем нижнее подчеркивание */
+    color: #374151;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4); /* Полупрозрачный фон */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease; /* Плавная анимация */
+}
+
+/* Эффект при наведении мышки */
+.page-nav a:hover {
+    background-color: #3b82f6; /* Синий цвет */
+    color: #ffffff; /* Белый текст */
+    transform: translateY(-2px); /* Кнопка слегка приподнимается */
+}
+
+html {
+    scroll-behavior: smooth;
+}
