@@ -1,157 +1,184 @@
-/* Базовые настройки страницы */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f3f4f6;
-    color: #333;
-    margin: 0;
-    padding: 0 20px; /* Изменено, чтобы меню не конфликтовало с отступами */
-    min-height: 100vh;
-    
-    /* Добавлено для того, чтобы footer всегда был прижат к низу */
-    display: flex;
-    flex-direction: column;
+/* =========================================
+   БАЗОВЫЕ НАСТРОЙКИ СТРАНИЦЫ
+   ========================================= */
+* {
+    box-sizing: border-box;
 }
 
-/* Плавная прокрутка к секциям */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Задаем современный шрифт без засечек */
+    background-color: #f3f4f6; /* Светло-серый фон страницы */
+    color: #333; /* Темно-серый цвет текста для хорошей читаемости */
+    margin: 0; /* Убираем стандартные отступы браузера по краям */
+    padding: 0 20px; /* Добавляем внутренние отступы по бокам, чтобы контент не прилипал к экрану на мобильных */
+    min-height: 100vh; /* Минимальная высота body равна 100% высоты экрана (Viewport Height) */
+    
+    /* Flexbox для body позволяет нам управлять расположением глобальных блоков (например, прижать футер к низу) */
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы сверху вниз */
+}
+
+/* Плавная прокрутка при клике на якорные ссылки (навигацию) */
 html {
     scroll-behavior: smooth;
 }
 
-/* === НАВИГАЦИЯ (Зафиксированное меню) === */
+/* =========================================
+   НАВИГАЦИЯ (Эффект Glassmorphism)
+   ========================================= */
 .page-nav {
-    position: fixed; 
-    top: 20px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    z-index: 1000; 
+    position: fixed; /* Фиксируем меню относительно окна браузера */
+    top: 20px; /* Отступ от верхнего края */
+    left: 50%; /* Центрируем меню по горизонтали относительно окна */
+    transform: translateX(-50%); /* Сдвигаем меню обратно на половину его собственной ширины, чтобы точно отцентрировать */
+    z-index: 1000; /* Гарантирует, что меню будет поверх всех остальных элементов при прокрутке */
     
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; 
-    gap: 15px;
-    padding: 12px 24px; 
+    display: flex; /* Делаем меню flex-контейнером для выстраивания кнопок */
+    justify-content: center; /* Центрируем кнопки внутри меню */
+    flex-wrap: wrap; /* Позволяет кнопкам переноситься на новую строку, если экран очень узкий */
+    gap: 15px; /* Расстояние между кнопками */
+    padding: 12px 24px; /* Внутренние отступы меню */
     
-    background-color: rgba(255, 255, 255, 0.7); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6); 
-    border-radius: 40px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+    /* Визуальный стиль: полупрозрачное стекло (Glassmorphism) */
+    background-color: rgba(255, 255, 255, 0.7); /* Белый цвет с 70% непрозрачностью */
+    backdrop-filter: blur(12px); /* Размывает то, что находится позади меню */
+    -webkit-backdrop-filter: blur(12px); /* Поддержка размытия для браузеров Safari */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Полупрозрачная рамка */
+    border-radius: 40px; /* Сильно скругленные углы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Мягкая тень для объема */
     
-    width: max-content; 
-    max-width: 90%;
+    width: max-content; /* Ширина подстраивается под содержимое (кнопки) */
+    max-width: 90%; /* Но не дает меню стать шире 90% экрана на мобильных */
 }
 
+/* Ссылки внутри навигации */
 .page-nav a {
-    text-decoration: none; 
-    color: #374151; 
-    font-weight: 600; 
-    padding: 8px 16px; 
-    border-radius: 20px; 
-    transition: all 0.3s ease; 
+    text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+    color: #374151; /* Темно-серый цвет текста */
+    font-weight: 600; /* Полужирное начертание */
+    padding: 8px 16px; /* Зона клика вокруг текста */
+    border-radius: 20px; /* Скругляем углы при наведении */
+    transition: all 0.3s ease; /* Плавная анимация всех изменений (цвет, позиция) при наведении */
 }
 
+/* Состояние ссылки при наведении курсора */
 .page-nav a:hover {
-    background-color: #3b82f6; 
-    color: #ffffff; 
-    transform: translateY(-2px); 
+    background-color: #3b82f6; /* Синий фон */
+    color: #ffffff; /* Белый текст */
+    transform: translateY(-2px); /* Эффект легкого "подпрыгивания" кнопки вверх */
 }
 
-/* Основной белый контейнер */
+/* =========================================
+   ОСНОВНОЙ КОНТЕЙНЕР ДЛЯ КОНТЕНТА
+   ========================================= */
 #container {
-    max-width: 750px;
-    width: 100%;
+    left: 50%;
+    max-width: 750px; /* Ограничиваем максимальную ширину карточки для красивого вида на ПК */
+    width: 100%; /* Занимает всю доступную ширину до 750px */
     
-    /* Отступ сверху отодвигает карточку от зафиксированного меню */
+    /* Отступы: 100px сверху (чтобы меню не перекрывало текст), auto по бокам (для центрирования), 40px снизу */
     margin: 100px auto 40px auto; 
     
-    padding: 40px;
-    border-radius: 16px;
+    padding: 40px; /* Внутренний отступ от краев карточки до контента */
+    border-radius: 16px; /* Скругление углов главной карточки */
+    
+    /* Стиль карточки: стекло (Glassmorphism), как у меню */
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Более глубокая тень, чем у меню */
     
-    /* Растягивает контейнер, выталкивая footer в самый низ страницы */
+    /* Ключевое свойство для футера! Заставляет контейнер расти и заполнять пустое пространство, выталкивая footer вниз */
     flex: 1; 
 }
 
-/* === ШАПКА === */
+/* =========================================
+   ШАПКА ПРОФИЛЯ (Фото + Текст)
+   ========================================= */
 .profile-header {
-    display: flex; 
-    align-items: center; 
-    gap: 30px; 
-    border-bottom: 2px solid #f3f4f6; 
-    padding-bottom: 30px; 
-    margin-bottom: 30px; 
+    display: flex; /* Располагает фото и инфо в один ряд */
+    align-items: center; /* Выравнивает их по вертикальному центру */
+    gap: 30px; /* Расстояние между фото и текстовым блоком */
+    border-bottom: 2px solid #f3f4f6; /* Разделительная линия снизу */
+    padding-bottom: 30px; /* Отступ текста от линии */
+    margin-bottom: 30px; /* Отступ линии от следующего контента */
 }
 
+/* Блок с фотографией */
 .photo-container {
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Запрещает фотографии сжиматься, если не хватает места */
 }
 
 .profile-photo {
-    width: 160px; 
+    width: 160px; /* Строго заданные размеры для идеального круга */
     height: 160px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 3px solid #e5e7eb; 
+    border-radius: 50%; /* Делает изображение круглым */
+    object-fit: cover; /* Обрезает фото, чтобы оно заполняло круг без искажения пропорций */
+    border: 3px solid #e5e7eb; /* Светлая рамка вокруг фото */
 }
 
+/* Текстовая информация в шапке */
 .profile-info h1 {
-    margin: 0 0 10px 0; 
-    font-size: 2.2em; 
+    margin: 0 0 10px 0; /* Отступ только снизу */
+    font-size: 2.2em; /* Крупный размер имени */
     color: #111827; 
 }
 
 .about-me {
     color: #4b5563; 
     margin: 0 0 15px 0; 
-    line-height: 1.6; 
+    line-height: 1.6; /* Увеличенный межстрочный интервал для легкого чтения */
 }
 
-/* === СОЦИАЛЬНЫЕ СЕТИ === */
+/* =========================================
+   СОЦИАЛЬНЫЕ СЕТИ
+   ========================================= */
 .social-links {
     display: flex; 
-    gap: 15px; 
-    flex-wrap: wrap; /* Чтобы текст не съезжал на телефоне */
-    align-items: center;
+    gap: 15px; /* Расстояние между кнопками соцсетей */
+    flex-wrap: wrap; /* Позволяет кнопкам переноситься на новую строку, если они не влезают по ширине */
+    align-items: center; /* Выравнивает иконки по центру по вертикали */
 }
 
+/* Общие стили для иконок соцсетей */
 .social-icon {
     display: inline-flex; 
     align-items: center; 
-    justify-content: center; 
+    justify-content: center; /* Центрирует иконку (SVG/FontAwesome) внутри кружка */
     width: 40px; 
     height: 40px; 
-    border-radius: 50%; 
-    color: #fff; 
+    border-radius: 50%; /* Делает кнопку круглой */
+    color: #fff; /* Белый цвет иконки внутри */
     text-decoration: none; 
     font-size: 1.3em; 
-    transition: transform 0.2s; 
+    transition: transform 0.2s; /* Плавная анимация увеличения при наведении */
 }
 
 .social-icon:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1); /* Увеличивает кнопку на 10% при наведении */
 }
 
+/* Индивидуальные цвета брендов */
 .telegram { background-color: #0088cc; }
-.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } /* Градиент для Инстаграма */
 .github { background-color: #333; }
 
-/* === ОСНОВНОЙ КОНТЕНТ === */
+/* =========================================
+   ОСНОВНОЙ КОНТЕНТ И СЕКЦИИ
+   ========================================= */
 h2 {
     color: #111827; 
     font-size: 1.5em; 
     margin-bottom: 20px; 
 }
 
+/* Карточки внутри секций (например, блок образования) */
 .card {
-    background-color: #f9fafb; 
+    background-color: #f9fafb; /* Легко-серый фон для выделения из белого контейнера */
     padding: 20px; 
     border-radius: 8px; 
-    border-left: 4px solid #3b82f6; 
+    border-left: 4px solid #3b82f6; /* Синяя акцентная полоса слева */
     margin-bottom: 30px; 
 }
 
@@ -162,7 +189,7 @@ h2 {
 
 .specialty {
     font-weight: bold; 
-    color: #3b82f6; 
+    color: #3b82f6; /* Акцентный синий цвет */
     margin: 0 0 10px 0; 
 }
 
@@ -172,77 +199,88 @@ h2 {
     line-height: 1.5; 
 }
 
-/* === НАВЫКИ === */
-.skills-list {
+/* =========================================
+   СПИСКИ (Навыки, Хобби, Проекты)
+   ========================================= */
+/* Все списки используют одинаковую структуру (в столбик), но разные цвета */
+.skills-list, .hobbies-list, .projects-list {
     display: flex; 
-    flex-wrap: wrap; 
-    flex-direction: column; 
-    gap: 10px; 
-    padding: 0; 
-    list-style: none; 
+    flex-wrap: wrap; /* Позволило бы переноситься, если бы flex-direction был row */
+    flex-direction: column; /* Выстраивает элементы списка строго в один столбик (вертикально) */
+    gap: 10px; /* Расстояние между плашками */
+    padding: 0; /* Убирает стандартные отступы <ul> */
+    list-style: none; /* Убирает стандартные маркеры (точки) у списка */
 }
 
+/* Индивидуальные стили "плашек" для разных категорий */
 .skills-list li {
-    background-color: #e0f2fe; 
-    color: #0369a1; 
+    background-color: #e0f2fe; /* Светло-голубой фон */
+    color: #0369a1; /* Темно-голубой текст */
     padding: 8px 16px; 
-    border-radius: 20px; 
+    border-radius: 20px; /* Скругление формы в вид "таблетки" */
     font-size: 0.95em; 
     font-weight: 500; 
-}
-
-/* === ХОББИ И СПОРТ === */
-.hobbies-list {
-    display: flex; 
-    flex-wrap: wrap; 
-    flex-direction: column; 
-    gap: 10px; 
-    padding: 0; 
-    list-style: none; 
 }
 
 .hobbies-list li {
-    background-color: #dcfce7; 
-    color: #166534; 
+    background-color: #dcfce7; /* Светло-зеленый фон */
+    color: #166534; /* Темно-зеленый текст */
     padding: 8px 16px; 
     border-radius: 20px; 
     font-size: 0.95em; 
     font-weight: 500; 
-}
-
-/* === ПРОЕКТЫ === */
-.projects-list {
-    display: flex; 
-    flex-wrap: wrap; 
-    flex-direction: column; 
-    gap: 10px; 
-    padding: 0; 
-    list-style: none; 
 }
 
 .projects-list li {
-    background-color: #fcdce0; 
-    color: #651623; 
+    background-color: #fcdce0; /* Светло-красный фон */
+    color: #651623; /* Темно-красный текст */
     padding: 8px 16px; 
     border-radius: 20px; 
     font-size: 0.95em; 
     font-weight: 500; 
 }
 
-/* === ФУТЕР === */
+/* =========================================
+   ФУТЕР
+   ========================================= */
 footer {
-    text-align: center;
+    text-align: center; /* Центрирует текст (например, копирайт) */
     padding: 20px;
     color: #6b7280;
     font-size: 0.9em;
-    margin-top: auto; /* Прижимает футер к низу */
+    margin-top: auto; /* Работает вместе с flex: 1 у #container. Автоматически отталкивает футер в самый низ экрана */
 }
 
-/* === АДАПТИВНОСТЬ (для мобильных телефонов) === */
-@media (max-width: 600px) {
+/* =========================================
+   АДАПТИВНОСТЬ (Медиа-запросы для мобильных)
+   ========================================= */
+/* Правила внутри этого блока сработают только на экранах шириной 600px и меньше */
+@@media (max-width: 600px) {
+    /* Убираем отступы body, чтобы они не сдвигали контейнер */
+    body {
+        padding: 0;
+    }
+
     #container {
+        width: 92%; /* Задаем такую же ширину, как у меню */
         padding: 25px 15px;
-        margin-top: 130px; /* Увеличенный отступ, если меню перенесется в 2 строки */
+        /* margin: сверху auto(справа) снизу auto(слева) */
+        margin: 130px auto 40px auto; 
+    }
+
+    .page-nav {
+        width: 92%; /* Задаем такую же ширину, как у контейнера */
+        left: 50%;
+        transform: translateX(-50%); /* Это гарантирует идеальное центрирование */
+        
+        gap: 8px; 
+        padding: 10px; 
+        border-radius: 20px; 
+    }
+    
+    .page-nav a {
+        padding: 6px 12px; 
+        font-size: 0.85em; 
     }
 
     .profile-header {
@@ -253,16 +291,37 @@ footer {
     .social-links {
         justify-content: center; 
     }
+}media (max-width: 600px) {
+    #container {
+        padding: 25px 15px; /* Уменьшаем внутренние отступы, чтобы сэкономить место на экране */
+        margin-top: 130px; /* Увеличиваем отступ сверху, так как навигация на телефоне может занять 2 строки */
+        width: 95%;
+    }
+
+    .profile-header {
+        flex-direction: column; /* Перестраиваем шапку: фото будет сверху, а текст под ним (а не в один ряд) */
+        text-align: center; /* Центрируем весь текст профиля */
+    }
+    
+    .social-links {
+        justify-content: center; /* Центрируем кнопки соцсетей, чтобы они смотрелись аккуратно под центрированным текстом */
+    }
     
     .page-nav {
-        width: 90%; 
-        gap: 8px; 
-        padding: 10px; 
-        border-radius: 20px; 
+        display: flex;
+        justify-content: center; /* по горизонтали */
+        align-items: center; 
+
+
+
+        width: 90%; /* Позволяем меню занимать почти всю ширину экрана */
+        gap: 8px; /* Уменьшаем расстояние между ссылками навигации */
+        padding: 10px; /* Уменьшаем размер самой плашки меню */
+        border-radius: 20px; /* Делаем углы чуть менее скругленными */
     }
     
     .page-nav a {
-        padding: 6px 12px; 
-        font-size: 0.85em; 
+        padding: 6px 12px; /* Уменьшаем зону клика у ссылок */
+        font-size: 0.85em; /* Делаем шрифт ссылок чуть меньше, чтобы их больше влезло в ряд */
     }
 }
