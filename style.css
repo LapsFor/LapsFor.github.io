@@ -1,10 +1,6 @@
 /* =========================================
    БАЗОВЫЕ НАСТРОЙКИ СТРАНИЦЫ
    ========================================= */
-* {
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Задаем современный шрифт без засечек */
     background-color: #f3f4f6; /* Светло-серый фон страницы */
@@ -255,47 +251,11 @@ footer {
    АДАПТИВНОСТЬ (Медиа-запросы для мобильных)
    ========================================= */
 /* Правила внутри этого блока сработают только на экранах шириной 600px и меньше */
-@@media (max-width: 600px) {
-    /* Убираем отступы body, чтобы они не сдвигали контейнер */
-    body {
-        padding: 0;
-    }
-
-    #container {
-        width: 92%; /* Задаем такую же ширину, как у меню */
-        padding: 25px 15px;
-        /* margin: сверху auto(справа) снизу auto(слева) */
-        margin: 130px auto 40px auto; 
-    }
-
-    .page-nav {
-        width: 92%; /* Задаем такую же ширину, как у контейнера */
-        left: 50%;
-        transform: translateX(-50%); /* Это гарантирует идеальное центрирование */
-        
-        gap: 8px; 
-        padding: 10px; 
-        border-radius: 20px; 
-    }
-    
-    .page-nav a {
-        padding: 6px 12px; 
-        font-size: 0.85em; 
-    }
-
-    .profile-header {
-        flex-direction: column; 
-        text-align: center; 
-    }
-    
-    .social-links {
-        justify-content: center; 
-    }
-}media (max-width: 600px) {
+@media (max-width: 600px) {
     #container {
         padding: 25px 15px; /* Уменьшаем внутренние отступы, чтобы сэкономить место на экране */
-        margin-top: 130px; /* Увеличиваем отступ сверху, так как навигация на телефоне может занять 2 строки */
-        width: 95%;
+        margin: 130px auto 40px auto; /* Увеличиваем отступ сверху, так как навигация на телефоне может занять 2 строки */
+        width: 92%;
     }
 
     .profile-header {
@@ -308,16 +268,13 @@ footer {
     }
     
     .page-nav {
-        display: flex;
-        justify-content: center; /* по горизонтали */
-        align-items: center; 
-
-
-
-        width: 90%; /* Позволяем меню занимать почти всю ширину экрана */
-        gap: 8px; /* Уменьшаем расстояние между ссылками навигации */
-        padding: 10px; /* Уменьшаем размер самой плашки меню */
-        border-radius: 20px; /* Делаем углы чуть менее скругленными */
+        width: 92%; /* Задаем такую же ширину, как у контейнера */
+        left: 50%;
+        transform: translateX(-50%); /* Это гарантирует идеальное центрирование */
+        
+        gap: 8px; 
+        padding: 10px; 
+        border-radius: 20px;
     }
     
     .page-nav a {
