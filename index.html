@@ -1,98 +1,233 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denys Tkachenko</title>
-    <!-- Подключаем наш CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключаем библиотеку иконок для соцсетей -->
+    <title>Denys Tkachenko - CV</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Własne style -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <!-- Навигация (зафиксирована сверху в виде стеклянного островка) -->
+    <!-- Nawigacja -->
     <nav class="page-nav">
-        <a href="#education">Образование</a>
-        <a href="#skills">Навыки</a>
-        <a href="#hobbies">Хобби</a>
-        <a href="#projects">Проекты</a>
+        <a href="#education">Edukacja</a>
+        <a href="#career">Doświadczenie</a>
+        <a href="#skills">Umiejętności</a>
+        <a href="#languages">Języki</a>
+        <a href="#hobbies">Zainteresowania</a>
+        <a href="#projects">Projekty</a>
     </nav>
 
     <div id="container">
-        <!-- Шапка: Фото слева, Информация и соцсети справа -->
+        <!-- Nagłówek -->
         <header class="profile-header">
             <div class="photo-container">
-                <!-- Место под твое фото -->
                 <img src="photo.png" alt="Denys Tkachenko" class="profile-photo">
             </div>
             <div class="profile-info">
                 <h1>Denys Tkachenko</h1>
                 <p class="about-me">
-                    Привет! Я живу и учусь в Польше. Увлекаюсь волейболом и изучением новых технологий. 
-                    Мне нравится совмещать понимание бизнес-процессов и техническими решениями, 
-                    и я всегда готов применить свои знания на практике.
+                    Cześć! Mieszkam i studiuję w Polsce. Interesuję się siatkówką oraz nauką nowych technologii. 
+                    Lubię łączyć zrozumienie procesów biznesowych z rozwiązaniami technicznymi 
+                    i zawsze jestem gotów zastosować swoją wiedzę w praktyce.
                 </p>
-                <div class="social-links">
+                
+                <!-- Informacje kontaktowe -->
+                <div class="contact-info">
+                    <a href="tel:+48537190099" class="contact-link"><i class="fas fa-phone-alt"></i> +48 537 190 099</a>
+                    <a href="mailto:den200616@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> den200616@gmail.com</a>
+                </div>
+
+                <div class="social-links mt-3">
                     <a href="https://t.me/LAPS8" target="_blank" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
-                    <p style="margin: 7px 0px; line-height: 1.6; color: #4b5563;">LAPS8</p>
+                    <p class="social-text">LAPS8</p>
+                    
                     <a href="https://www.instagram.com/_lapssss_?stkn=MXdsZ2EwcTNsMDhnOQ==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                    <p style="margin: 7px 0px; line-height: 1.6; color: #4b5563;">_lapssss_</p>
+                    <p class="social-text">_lapssss_</p>
+                    
                     <a href="https://github.com/LapsFor" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
-                    <p style="margin: 7px 0px; line-height: 1.6; color: #4b5563;">LapsFor</p>
+                    <p class="social-text">LapsFor</p>
                 </div>
             </div>
         </header>
-        
+
+        <!-- Edukacja -->
         <section class="education" id="education">
-            <h2>Образование</h2>
-            <div class="card">
-                <h3>Silesian University of Technology (Польша)</h3>
-                <p class="specialty">Специальность: Автоматика и промышленая информатика</p>
-                <p class="details">Углубленное изучение автоматизированных систем управления и С</p>
+            <h2>Edukacja</h2>
+            <div class="custom-card">
+                <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row mb-2">
+                    <h3 class="m-0">Politechnika Śląska (Polska)</h3>
+                    <span class="badge bg-secondary mt-2 mt-md-0" style="font-size: 0.85em; padding: 6px 10px;">2023 - 2024</span>
+                </div>
+                <p class="specialty">Kierunek: Automatyka i Informatyka Przemysłowa</p>
+                <p class="details">Pogłębione studium zautomatyzowanych systemów sterowania i programowania w języku C.</p>
             </div>
-            <div class="card">
-                <h3>Silesian University of Technology (Польша)</h3>
-                <p class="specialty">Специальность: Логистика</p>
-                <p class="details">Изучаю управление цепями поставок</p>
+            <div class="custom-card">
+                <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row mb-2">
+                    <h3 class="m-0">Politechnika Śląska (Polska)</h3>
+                    <span class="badge bg-secondary mt-2 mt-md-0" style="font-size: 0.85em; padding: 6px 10px;">2025 - 2026</span>
+                </div>
+                <p class="specialty">Kierunek: Logistyka</p>
+                <p class="details">Zarządzanie łańcuchem dostaw, kanały dystrybucji i logistyka magazynowa e-commerce. Pisanie pracy dyplomowej na temat ewolucji systemów WMS w branży meblarskiej.</p>
             </div>
         </section>
 
-        <section class="skills" id="skills">
-            <h2>Професиональные навыки</h2>
-            <ul class="skills-list">
-                <li>Autodesk® Inventor</li>
-                <li>AutoCAD моделирование</li>
-                <li>Python</li>
-                <li>C</li>
-                <li>HTML</li>
-                <li>CSS</li>
-            </ul>
+        <!-- Doświadczenie zawodowe -->
+        <section class="career mt-5" id="career">
+            <h2>Doświadczenie zawodowe</h2>
+            <div class="custom-card">
+                <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row mb-2">
+                    <h3 class="m-0">Northgate (Gliwice, Polska)</h3>
+                </div>
+                <p class="specialty">Specjalista ds. spedycji i logistyki</p>
+                <p class="details">Organizacja transportu towarowego, praca z dokumentacją transportową i koordynacja łańcuchów logistycznych.</p>
+            </div>
+            <div class="custom-card">
+                <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row mb-2">
+                    <h3 class="m-0">IKEA (Rybnik, Polska)</h3>
+                </div>
+                <p class="specialty">Projektant mebli i kuchni</p>
+                <p class="details">Pełny cykl projektowania kuchni i systemów meblowych. Praca z klientami, analiza pojemności magazynowych oraz procesów wewnętrznej dystrybucji marki.</p>
+            </div>
         </section>
 
-        <section class="hobbies" id="hobbies">
-            <h2>Хобби</h2>
-            <ul class="hobbies-list">
-                <li>Волейбол</li>
-                <li>Фитнес</li>
-                <li>Механика</li>
-                <li>Киберспорт</li>
-            </ul>
+        <!-- Umiejętności -->
+        <section class="skills mt-5" id="skills">
+            <h2 class="mb-4">Umiejętności zawodowe</h2>
+            
+            <div id="skills-app">
+                <div class="row g-3">
+                    <div class="col-6 col-md-4 col-lg-3" v-for="skill in skills" :key="skill.name">
+                        <div class="skill-box h-100 d-flex flex-column align-items-center justify-content-center text-center p-3">
+                            <i :class="skill.iconClass" :style="{ color: skill.color }" class="skill-logo mb-2"></i>
+                            <span class="skill-name">{{ skill.name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="projects" id="projects">
-            <h2>Проекты</h2>
-            <ul class="projects-list">
-                <li>Будующий Pet Project 1</li>
-                <li>Будующий Pet Project 2</li>
-            </ul>
+        <!-- Języki -->
+        <section class="languages mt-5" id="languages">
+            <h2>Znajomość języków</h2>
+            <div class="custom-card">
+                <ul class="list-unstyled mb-0" style="display: flex; flex-direction: column; gap: 12px; font-size: 1.05em;">
+                    <li><i class="fas fa-check-circle" style="color: #3b82f6; width: 25px;"></i> <strong>Polski:</strong> Biegły</li>
+                    <li><i class="fas fa-check-circle" style="color: #3b82f6; width: 25px;"></i> <strong>Angielski:</strong> Upper-Intermediate (B2)</li>
+                    <li><i class="fas fa-check-circle" style="color: #3b82f6; width: 25px;"></i> <strong>Ukraiński:</strong> Ojczysty</li>
+                    <li><i class="fas fa-check-circle" style="color: #3b82f6; width: 25px;"></i> <strong>Rosyjski:</strong> Ojczysty</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projekty -->
+        <section class="projects mt-5" id="projects">
+            <h2 class="mb-4">Projekty</h2>
+            
+            <!-- Projekt 1: AI Agent -->
+            <div class="custom-card">
+                <h3 class="mb-2">Agent AI do projektowania kuchni</h3>
+                <p class="details mb-3">Inteligentny asystent do automatyzacji procesów planowania i projektowania zestawów kuchennych.</p>
+                
+                <div class="tech-stack d-flex flex-wrap gap-3 fs-3 align-items-center">
+                    <i class="devicon-google-plain colored" title="Google"></i>
+                    <i class="devicon-python-plain colored" title="Python"></i>
+                    <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                    <i class="devicon-html5-plain colored" title="HTML5"></i>
+                    <i class="devicon-css3-plain colored" title="CSS3"></i>
+                    <i class="devicon-sqlite-plain colored" title="SQLite"></i>
+                    <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
+                </div>
+            </div>
+            
+            <!-- Projekt 2: To-Do List -->
+            <div class="custom-card">
+                <h3 class="mb-2">Interaktywna lista zadań (To-Do List)</h3>
+                <p class="details mb-3">Pełnoprawna aplikacja internetowa do zarządzania zadaniami. Skonfigurowano backend we Flasku i zrealizowano połączenie z bazą danych do zapisywania informacji.</p>
+                
+                <div class="tech-stack d-flex flex-wrap gap-3 fs-3 align-items-center">
+                    <i class="devicon-python-plain colored" title="Python"></i>
+                    <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                    <i class="devicon-html5-plain colored" title="HTML5"></i>
+                    <i class="devicon-css3-plain colored" title="CSS3"></i>
+                    <i class="devicon-c-plain colored" title="C"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zainteresowania -->
+        <section class="hobbies mt-5" id="hobbies">
+            <h2 class="mb-4">Zainteresowania</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <div class="hobby-card text-center p-3 h-100 d-flex flex-column align-items-center justify-content-center hobby-sport">
+                        <i class="fas fa-volleyball-ball mb-2"></i>
+                        <strong>Siatkówka</strong>
+                        <span class="hobby-desc">mechanika skoku, biomechanika ataku</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hobby-card text-center p-3 h-100 d-flex flex-column align-items-center justify-content-center hobby-fitness">
+                        <i class="fas fa-dumbbell mb-2"></i>
+                        <strong>Sport i fitness</strong>
+                        <span class="hobby-desc">kondycjonowanie, treningi</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hobby-card text-center p-3 h-100 d-flex flex-column align-items-center justify-content-center hobby-coding">
+                        <i class="fas fa-laptop-code mb-2"></i>
+                        <strong>Programowanie</strong>
+                        <span class="hobby-desc">pogłębiona nauka full-stack (C, Python, JS, Flask)</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hobby-card text-center p-3 h-100 d-flex flex-column align-items-center justify-content-center hobby-robot">
+                        <i class="fas fa-cogs mb-2"></i>
+                        <strong>Mechanika i robotyka</strong>
+                        <span class="hobby-desc">projektowanie, roboty</span>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
-    <!-- footer -->
     <footer>
         <p>&copy; 2026 Denys Tkachenko.</p>
     </footer>
 
+    <!-- Vue.js 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    skills: [
+                        { name: 'Systemy WMS', iconClass: 'fas fa-warehouse', color: '#6366f1' },
+                        { name: 'Autodesk® Inventor', iconClass: 'fas fa-cube', color: '#f96816' },
+                        { name: 'AutoCAD', iconClass: 'fas fa-drafting-compass', color: '#c21e25' },
+                        { name: 'Python (FastAPI)', iconClass: 'devicon-python-plain colored', color: '' },
+                        { name: 'C (Algorytmy)', iconClass: 'devicon-c-plain colored', color: '' },
+                        { name: 'HTML & CSS', iconClass: 'devicon-html5-plain colored', color: '' },
+                        { name: 'Git & Linux', iconClass: 'devicon-git-plain colored', color: '' },
+                        { name: 'Vue.js', iconClass: 'devicon-vuejs-plain colored', color: '' },
+                        { name: 'Bootstrap', iconClass: 'devicon-bootstrap-plain colored', color: '' },
+                        { name: 'SQLite', iconClass: 'devicon-sqlite-plain colored', color: '' },
+                        { name: 'PostgreSQL', iconClass: 'devicon-postgresql-plain colored', color: '' }
+                    ]
+                }
+            }
+        }).mount('#skills-app');
+    </script>
 </body>
 </html>
